@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function merge2DArrays(arr1, arr2) {
+
+            if (arr1.length !== arr2.length) {
+                console.log("Arrays must have the same number of rows.");
+            };
+
+            let mergedArray = [];
+
+            for (let i = 0; i < arr1.length; i++) {
+                mergedArray.push(arr1[i].concat(arr2[i]));
+            };
+
+            return mergedArray;
+
+        };
+
+        let array1 = [
+            [1, 2, 3],
+            [4, 5, 6]
+        ];
+
+        let array2 = [
+            [7, 8, 9],
+            [10, 11, 12]
+        ];
+
+        let mergedArray = merge2DArrays(array1, array2);
+
+        console.log("Merged 2D array:");
+        console.log(mergedArray);
+
+    </script>
+
+</body>
+
+</html>

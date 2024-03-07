@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-4</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        class Node {
+
+            constructor(val) {
+
+                this.head = {
+                    prev: null,
+                    value: val,
+                    next: null
+                };
+
+                this.tail = this.head;
+
+            };
+
+            addNode(val, pos) {
+
+                if (pos < 1) {
+
+                    console.log("Invalid position!");
+                    return;
+
+                };
+
+                let current = this.head;
+                let count = 1;
+
+                let newNode = {
+                    prev: null,
+                    value: val,
+                    next: null
+                };
+                
+                if (!this.head) {
+                    
+                    this.head = newNode;
+                    this.tail = newNode;
+                    return;
+                    
+                };
+                
+                while (current && count < pos) {
+                    
+                    current = current.next;
+                    count++;
+                    
+                };
+                
+                if (!current && count !== pos) {
+
+                    this.tail.next = newNode;
+                    newNode.prev = this.tail;
+                    this.tail = newNode;
+                    return;
+
+                };
+
+                if (pos === 1) {
+
+                    newNode.next = this.head;
+                    this.head.prev = newNode;
+                    this.head = newNode;
+
+                } else {
+
+                    newNode.next = current;
+                    newNode.prev = current.prev;
+                    current.prev.next = newNode;
+                    current.prev = newNode;
+
+                };
+
+            };
+
+        };
+
+        let prNode = new Node("List-1");
+        prNode.addNode("List-2", 3);
+        prNode.addNode("List-3", 2);
+        prNode.addNode("List-4", 5);
+        prNode.addNode("List-5", 4);
+        console.log(prNode);
+
+    </script>
+
+</body>
+
+</html>

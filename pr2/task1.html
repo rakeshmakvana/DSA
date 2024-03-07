@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-1</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        class Node {
+
+            constructor(val) {
+
+                this.head = {
+                    value: val,
+                    next: null
+                };
+
+                this.tail = this.head;
+
+            };
+
+            addNode(val) {
+
+                let newNode = {
+                    value: val,
+                    next: null
+                };
+
+                newNode.next = this.head;
+                this.head = newNode;
+
+            };
+
+        };
+
+        let prNode = new Node("List-1");
+        prNode.addNode("List-2");
+        prNode.addNode("List-3");
+        prNode.addNode("List-4");
+        prNode.addNode("List-5");
+        console.log(prNode);
+
+    </script>
+
+</body>
+
+</html>
